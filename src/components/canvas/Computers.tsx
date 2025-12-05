@@ -16,7 +16,7 @@ const Computers: React.FC<ComputersProps> = ({ isMobile }) => {
   const groupRef = useRef<THREE.Group | null>(null);
 
   // AUTO-ROTATION: slowly rotate around Y axis
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     if (groupRef.current) {
       groupRef.current.rotation.y += 0.3 * delta * 5; // tweak speed here
       // delta is time since last frame; using it keeps rotation framerate-independent
